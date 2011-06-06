@@ -1,0 +1,5 @@
+---
+gateway: qtelecom
+login: qtelecom_login
+password: qtelecom_password
+ssl: true
