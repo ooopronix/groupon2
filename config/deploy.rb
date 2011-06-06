@@ -1,7 +1,7 @@
 require 'bundler/capistrano'
 
 set :application, "groupon2"
-set :repository,  "git@github.com:pronix/spree_groupon2.git"
+set :repository,  "git@github.com:pronix/groupon2.git"
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
