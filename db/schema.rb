@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110530132317) do
+ActiveRecord::Schema.define(:version => 20110607050943) do
 
   create_table "addresses", :force => true do |t|
     t.string   "firstname"
@@ -614,8 +614,15 @@ ActiveRecord::Schema.define(:version => 20110530132317) do
     t.datetime "confirm_phone_at"
     t.string   "phone_confirm_key"
     t.boolean  "phone_confirm",                       :default => false
+    t.string   "invitation_token",     :limit => 60
+    t.datetime "invitation_sent_at"
+    t.integer  "invitation_limit"
+    t.integer  "invited_by_id"
+    t.string   "invited_by_type"
   end
 
+  add_index "users", ["invitation_token"], :name => "index_users_on_invitation_token"
+  add_index "users", ["invited_by_id"], :name => "index_users_on_invited_by_id"
   add_index "users", ["persistence_token"], :name => "index_users_on_persistence_token"
 
   create_table "variants", :force => true do |t|

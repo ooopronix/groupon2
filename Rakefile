@@ -3,5 +3,10 @@
 
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
+module ::TestGroupon2
+  class Application
+    include Rake::DSL
+  end
+end
 
 TestGroupon2::Application.load_tasks
