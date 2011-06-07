@@ -7,11 +7,11 @@ GIT
       httparty (>= 0.5.2)
       nokogiri (>= 1.4.1)
 
-GIT
-  remote: git@github.com:pronix/spree_groupon2.git
-  revision: 227999a10f8159b157a2935cdce81caf700a7683
+PATH
+  remote: ../spree_groupon2
   specs:
     spree_groupon2 (0.60.00)
+      devise_invitable (~> 0.4.0)
       haml (~> 3.1.1)
       sass (~> 3.1.2)
       spree_core (>= 0.60.00)
