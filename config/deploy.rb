@@ -33,6 +33,7 @@ set :bundle_flags,       "--quiet"
 after  "deploy:update",  "deploy:migrate"
 after  "deploy:migrate", "deploy:chown_apache"
 before "deploy:migrate", "deploy:symlink_database"
+after  "deploy:symlink", "deploy:symlink_image"
 after "deploy:update", "deploy:cleanup"
 
 
@@ -58,6 +59,13 @@ namespace :deploy do
 
   task :chown_apache do
     run "chown -R nginx:nginx #{current_path}/"
+  end
+
+  desc "Symlink the images"
+  task :symlink_image, :roles => :app do
+    %w(assets).each do |share_folder|
+      run "cd #{current_path}/public; rm -rf #{share_folder}; ln -s #{shared_path}/#{share_folder} ."
+    end
   end
 
 
