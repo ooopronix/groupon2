@@ -23,3 +23,4 @@ gem 'capistrano-ext'
 gem "haml"
 gem "sass"
 gem 'devise_invitable',      '~> 0.4.0'
+gem 'whenever',                        '~> 0.6.8'

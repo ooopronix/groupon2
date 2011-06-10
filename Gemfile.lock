@@ -7,8 +7,9 @@ GIT
       httparty (>= 0.5.2)
       nokogiri (>= 1.4.1)
 
-PATH
-  remote: ../spree_groupon2
+GIT
+  remote: git@github.com:pronix/spree_groupon2.git
+  revision: bb489e5cae0a242c746fbdf982988bc8946720ff
   specs:
     spree_groupon2 (0.60.00)
       devise_invitable (~> 0.4.0)
@@ -20,6 +21,7 @@ PATH
 GEM
   remote: http://rubygems.org/
   specs:
+    aaronh-chronic (0.3.9)
     abstract (1.0.0)
     actionmailer (3.0.7)
       actionpack (= 3.0.7)
@@ -193,6 +195,9 @@ GEM
       rack
     warden (1.0.4)
       rack (>= 1.0)
+    whenever (0.6.8)
+      aaronh-chronic (>= 0.3.9)
+      activesupport (>= 2.3.4)
     will_paginate (3.0.pre2)
 
 PLATFORMS
@@ -212,3 +217,4 @@ DEPENDENCIES
   spree_robokassa (~> 0.50.1)
   sqlite3
   unicorn
+  whenever (~> 0.6.8)
